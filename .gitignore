@@ -24,3 +24,5 @@ yarn-error.log*
 
 # virtual env
 /my_venv
+
+__pycache__

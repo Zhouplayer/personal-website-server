@@ -1,14 +1,17 @@
-# Gomoku game
+# Server Side (Flask)
 
-This is a Python-based Gomoku (Five-in-a-Row) game built using the Pygame library. Players take turns placing black and white stones on a 15x15 board, aiming to align five stones in a row horizontally, vertically, or diagonally to win.
+This is the server-side of my personal website. It is built using **Python Flask** to provide RESTful APIs and handle the backend logic.
 
+## Features
 
-**New function**
-- Test package
-- Restart button
-- Pause and Resume button
-- Quit game
-- Change color of board
+- RESTful API endpoints for dynamic communication with the client-side (React).
+- Lightweight and scalable backend using Flask.
+- Integration with a database (if applicable).
+- CORS support to enable secure communication with the frontend.
 
-**Bonus**
-- Add sql database, save match history
+## Tech Stack
+
+- **Python Flask**: Backend framework.
+- **Flask-CORS**: To handle Cross-Origin Resource Sharing (CORS).
+- **SQLAlchemy** (Optional): For database operations (if needed).
+- **Dotenv**: For managing environment variables.
