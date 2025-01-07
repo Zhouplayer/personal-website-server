@@ -1,9 +1,9 @@
-from flask import Flask, jsonify
+from flask import Flask, jsonify, send_file
 from flask_cors import CORS
 from data.projects import projects_data
 
 app = Flask(__name__)
-CORS(app, origins=["http://localhost:3000"])  # 允许跨域请求
+CORS(app, origins=["http://localhost:3000"])  # Allow cross-domain requests
 
 
 @app.route("/", methods=["GET"])
@@ -27,6 +27,20 @@ def get_project_by_id(id):
         return jsonify(project)
     else:
         return jsonify({"error": "Project not found"}), 404
+
+
+@app.route("/api/resume", methods=["GET"])
+def resume_file():
+    try:
+        # pdf path
+        file_path = "./data/Xuancheng_Zhou_Resume.pdf"
+
+        # use send_file to send pdf
+        return send_file(file_path, as_attachment=True)
+
+    except FileNotFoundError:
+        # if not found, return 404
+        return jsonify({"error": "Resume file not found"}), 404
 
 
 if __name__ == "__main__":
