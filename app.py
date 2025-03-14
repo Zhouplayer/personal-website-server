@@ -2,7 +2,6 @@ from flask import Flask, jsonify, send_file, request, url_for, send_from_directo
 from flask_cors import CORS
 from data.projects import projects_data
 from data.birthday_data import birthday_data
-import os
 
 # 配置静态文件存放路径
 MUSIC_DIR = "./data/musics"
