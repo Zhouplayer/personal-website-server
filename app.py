@@ -1,11 +1,21 @@
-from flask import Flask, jsonify, send_file, request, url_for, send_from_directory
+from flask import (
+    Flask,
+    jsonify,
+    send_file,
+    request,
+    url_for,
+    send_from_directory,
+    abort,
+)
 from flask_cors import CORS
 from data.projects import projects_data
 from data.birthday_data import birthday_data
+import os
 
-# 配置静态文件存放路径
-MUSIC_DIR = "./data/musics"
-IMAGE_DIR = "./data/images"
+# 配置静态文件存放路径（使用绝对路径）
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+MUSIC_DIR = os.path.join(BASE_DIR, "data/musics")
+IMAGE_DIR = os.path.join(BASE_DIR, "data/images")
 
 app = Flask(__name__)
 CORS(app)
@@ -87,15 +97,21 @@ def get_birthday_music():
         return jsonify({"error": f"No birthday data found for {friend_name}"}), 404
 
 
-# 提供音乐文件
-@app.route("/music/<path:filename>")
+# **修正 `/api/music/<filename>` 端点**
+@app.route("/api/music/<path:filename>")
 def serve_music(filename):
+    file_path = os.path.join(MUSIC_DIR, filename)
+    if not os.path.exists(file_path):
+        return abort(404)
     return send_from_directory(MUSIC_DIR, filename)
 
 
-# 提供图片文件（蛋糕 & 旋转木马）
-@app.route("/images/<path:filename>")
+# **修正 `/api/images/<filename>` 端点**
+@app.route("/api/images/<path:filename>")
 def serve_image(filename):
+    file_path = os.path.join(IMAGE_DIR, filename)
+    if not os.path.exists(file_path):
+        return abort(404)
     return send_from_directory(IMAGE_DIR, filename)
 
 
