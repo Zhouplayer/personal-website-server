@@ -8,7 +8,7 @@ MUSIC_DIR = "./data/musics"
 IMAGE_DIR = "./data/images"
 
 app = Flask(__name__)
-CORS(app, origins=["http://localhost:3000"])  # Allow cross-domain requests
+CORS(app)
 
 
 @app.route("/", methods=["GET"])
