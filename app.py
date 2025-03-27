@@ -97,7 +97,7 @@ def get_birthday_music():
         return jsonify({"error": f"No birthday data found for {friend_name}"}), 404
 
 
-# **修正 `/api/music/<filename>` 端点**
+# 获取音乐route
 @app.route("/api/music/<path:filename>")
 def serve_music(filename):
     file_path = os.path.join(MUSIC_DIR, filename)
@@ -106,7 +106,7 @@ def serve_music(filename):
     return send_from_directory(MUSIC_DIR, filename)
 
 
-# **修正 `/api/images/<filename>` 端点**
+# 获取图片route
 @app.route("/api/images/<path:filename>")
 def serve_image(filename):
     file_path = os.path.join(IMAGE_DIR, filename)
