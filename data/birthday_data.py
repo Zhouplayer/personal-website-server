@@ -8,7 +8,7 @@ birthday_data = {
         "name": "🎉 生日快乐, Emii姐 ! 🎂",
         "message": "新的一岁，祝你：卡里不缺钱，晚上不失眠，火锅不长肉，快递不拖延！",
     },
-    "ZhouYouyou": {
+    "Youyou": {
         "music_path": "happy-birthday.mp3",
         "cake_path": "cakeZhou.jpeg",
         "carousel_path": "carouselZhou.jpeg",
