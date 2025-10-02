@@ -16,7 +16,15 @@ birthday_data = {
         "name": "🎉 生日快乐, 悠悠 ! 🎂",
         "message": "妹妹生日快乐！愿你的日子比蛋糕甜，脚步比春风轻，无论远方多远，都有哥哥的祝福一路随行。",
     },
-    "Exanple": {
+    "Niannian": {
+        "music_path": "happy-birthday.mp3",
+        "cake_path": "cakeRichard.png",
+        "carousel_path": "carRichard.png",
+        "date": "2019/10/01",
+        "name": "🎉 生日快乐, 念念 ! 🎂",
+        "message": "弟弟生日快乐！愿你的生活比阳光灿烂，脚步比鼓点坚定，无论前方多长，都有哥哥的祝福一路随行。",
+    },
+    "Example": {
         "music_path": "./data/musics/happy-birthday.mp3",
         "cake_path": "./data/images/cake.jpeg",
         "carousel_path": "./data/images/cake.jpeg",
